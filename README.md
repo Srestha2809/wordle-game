@@ -21,7 +21,7 @@ That's it. Open `http://localhost:5173` and start guessing!
 | Tech | Why I Chose It |
 |------|----------------|
 | **React 19** | Latest features, great DX |
-| **TypeScript** | Caught so many bugs before runtime |
+| **TypeScript** | Type Safety |
 | **Tailwind CSS** | Rapid styling without context-switching |
 | **Vite** | Instant HMR, fast builds |
 
@@ -43,20 +43,6 @@ The app validates guesses against an external Wordle API. Each guess is sent as 
 **Accessibility First**
 
 I'm proud of this one. All color combinations meet **WCAG 2.1 AA** standards (4.5:1+ contrast). The yellow tiles use dark text instead of white — a small change that makes a big difference for colorblind users.
-
-## Challenges I Faced
-
-### 1. Animation Timing
-
-The tile flip animation needs to happen sequentially (tile 1, then 2, then 3...) but the keyboard colors should only update *after* all tiles finish. Getting this timing right required careful use of `setTimeout` chains and state flags.
-
-### 2. Keyboard State Sync
-
-When you guess "APPLE" and the first P is yellow but the second P is gray, what color should the P key be? Answer: the *best* state wins (green > yellow > gray). This required a priority system when updating the keyboard state map.
-
-### 3. The Virtual Keyboard Bug
-
-My virtual keyboard wasn't responding at all. Spent way too long on this before realizing I'd nested the key handler inside an unrelated `if` block. Classic. 🤦
 
 ## Project Structure
 ```
