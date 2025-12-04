@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { BoardRowData, GameState, GameStatus, TileState } from "../types";
+import type { BoardRowData, GameState, TileState } from "../types";
 import { FLIP_TILE, MAX_GUESSES, REVEAL_WORD, WORDLE_SCORE, WORD_LENGTH } from "../utils/constants";
 import { validateGuess } from "../services/wordleApi";
 
